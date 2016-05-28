@@ -14,9 +14,8 @@ var Router = {
         // Users
         app.get('/users', controllers.Users.index);
         
-        // Search 
+        // Search
         app.get('/search', controllers.Search.index);
-
     }
 
 };
