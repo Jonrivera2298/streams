@@ -8,5 +8,5 @@ module.exports = {
     About: About,
     Home: Home,
     Users: Users,
-    Search: Search 
+    Search: Search
 };

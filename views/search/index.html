@@ -13,14 +13,23 @@
     </form>
 </div>
 
-<h4>Search Results (172)</h4>
-<hr>
+{% if searchTerm %}
 
-<div class="container">
-  <div class="row tweets-container">
-    {% for i in range(0, 10) %}
-      {% include "search/_item.html" %}
-    {% endfor %}
+  {% if numItems == 0 %}
+  <h4>No results for "{{ searchTerm }}"</h4>
+  {% else %}
+  <h4>Search for "{{ searchTerm }}" ({{ numItems }})</h4>
+  <hr>
+
+  <div class="container">
+    <div class="row tweets-container">
+      {% for item in items %}
+        {% include "search/_item.html" %}
+      {% endfor %}
+    </div>
   </div>
-</div>
+  {% endif %}
+
+{% endif %}
+
 {% endblock %}
